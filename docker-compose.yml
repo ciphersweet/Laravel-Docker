@@ -1,0 +1,59 @@
+version: "3.9"
+services:
+
+  # Nginx Service
+  webserver:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: yuba/nginx:v0.1
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/logs:/var/log/nginx/
+    networks:
+      - laravel_app
+  
+  # PHP Service
+  app:
+    build: 
+      context: ./php/
+      dockerfile: Dockerfile
+    image: yuba/php-app:v0.1
+    container_name: php-app
+    restart: unless-stopped
+    depends_on:
+      - webserver
+    tty: true
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      APP_ENV: dev
+    networks:
+      - laravel_app
+
+  # Composer from app service image
+  composer:
+    build:
+      context: ./composer
+      dockerfile: Dockerfile
+    image: yuba/composer:v0.1
+    container_name: composer-app
+    depends_on:
+      - app
+    tty: true
+    volumes:
+      - ./src:/var/www/html
+
+# Define the network
+networks:
+  laravel_app:
+    driver: bridge
+
+# Define the volumes
+    
+
