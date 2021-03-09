@@ -4,8 +4,6 @@ LABEL maintainer="Ali Dalhouss <ali.dalhouss@gmail.com>"
 
 RUN docker-php-ext-install bcmath opcache;
 
-EXPOSE 9000/tcp
-
 ADD ./phpini/ "$PHP_INI_DIR/conf.d/"
 ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
 
