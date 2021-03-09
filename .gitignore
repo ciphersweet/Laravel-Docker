@@ -1,4 +1,5 @@
 src/
 *.env
 *.log
+.idea
 
