@@ -1,15 +1,17 @@
-FROM php:8.0.0-fpm-alpine
+FROM php:8-fpm-alpine
 
 LABEL maintainer="Ali Dalhouss <ali.dalhouss@gmail.com>"
 
-RUN docker-php-ext-install bcmath opcache;
+RUN docker-php-ext-install bcmath --ini bcmath.php.ini\
+    opcache --ini opcache.php.ini;
 
-ADD ./phpini/ "$PHP_INI_DIR/conf.d/"
+ADD ./phpini/ "$PHP_INI_DIR"/conf.d/
 ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
 
-RUN mkdir -p /var/www/html
-RUN chown -R www-data:www-data /var/www/html
-WORKDIR /var/www/html
+RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
+RUN chown laravel:laravel /var/www/html
+
+USER laravel
 
 COPY php_loaded_extensions.php /var/www/html/php_loaded_extensions.php
 
