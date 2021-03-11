@@ -75,6 +75,7 @@ services:
     build:
       context: ./php
       dockerfile: Dockerfile
+    image: yuba/artisan:v0.1
     container_name: artisan
     volumes:
       - ./src:/var/www/html
