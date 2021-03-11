@@ -2,16 +2,16 @@ FROM php:8-fpm-alpine
 
 LABEL maintainer="Ali Dalhouss <ali.dalhouss@gmail.com>"
 
-RUN apk add --no-cache postgresql-dev --virtual .build-dependencies
+RUN apk add --no-cache postgresql-dev
 
 RUN docker-php-ext-install bcmath --ini bcmath.php.ini\
     opcache --ini opcache.php.ini \
     pdo --ini pdo.php.ini \
     pdo_pgsql --ini pdo_pgsql.php.ini \
-    pgsql --ini pgsql.php.ini \
-    # Cleanup
-    && apk del .build-dependencies && \
-    rm -rf /var/cache/apk/* /tmp/* /var/tmp/* /usr/share/doc/* /usr/share/man/*;
+    pgsql --ini pgsql.php.ini
+
+# Cleanup
+RUN rm -rf /var/cache/apk/* /tmp/* /var/tmp/* /usr/share/doc/* /usr/share/man/*
 
 ADD ./phpini/ "$PHP_INI_DIR"/conf.d/
 ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
