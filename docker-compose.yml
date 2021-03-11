@@ -69,6 +69,42 @@ services:
       - database-data:/var/lib/postgresql/data:delegated
     networks: 
       - laravel_app
+
+  # Artisan CLI Service
+  artisan:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: artisan
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - database
+    working_dir: /var/www/html
+    entrypoint: ['php', '/var/www/html/artisan']
+    networks:
+      - laravel_app
+
+  # Node Package Manager Service
+  npm:
+    image: node:15-alpine3.10
+    container_name: npm
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ['npm']
+    networks:
+      - laravel_app
+
+  # Redis Service
+  redis:
+    image: redis:6.2-alpine
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    networks:
+      - laravel_app
   
 # Define the network
 networks:
