@@ -49,11 +49,35 @@ services:
     volumes:
       - ./src:/var/www/html
 
+  # Database Service
+  database:
+    build: 
+      context: ./postgresql
+      dockerfile: Dockerfile
+    image: yuba/postgresql:v0.1
+    container_name: postgresql-db
+    restart: unless-stopped
+    tty: true
+    ports: 
+      - "5432:5432"
+    environment: 
+      POSTGRES_PASSWORD: postgresql_password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: laravel
+    volumes: 
+      - ./postgresql/postgres.conf:/usr/local/etc/postgres/postgres.conf
+      - database-data:/var/lib/postgresql/data:delegated
+    networks: 
+      - laravel_app
+  
 # Define the network
 networks:
   laravel_app:
     driver: bridge
 
 # Define the volumes
+volumes: 
+  database-data:
+    driver: local
     
 
