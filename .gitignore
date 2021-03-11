@@ -1,4 +1,5 @@
 src/
+database-data/
 *.env
 *.log
 .idea
