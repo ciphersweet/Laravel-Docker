@@ -1,0 +1,63 @@
+[ ca ]                                                                     
+default_ca = ca_laravel_docky
+                                                                              
+[ ca_laravel_docky ]
+dir           = /etc/ssl/certs
+certs         = /etc/ssl/certs
+new_certs_dir = /etc/ssl/certs
+                                                 
+private_key   = /etc/ssl/private/laravel.test.key
+certificate   = /etc/ssl/certs/laravel.test.crt
+                                                                            
+default_md    = sha256
+
+name_opt      = ca_default
+cert_opt      = ca_default
+default_days  = 365
+preserve      = no                                                                      
+policy        = policy_loose
+                                                                                  
+[ policy_loose ]                                                                
+countryName             = optional
+stateOrProvinceName     = optional
+localityName            = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+                                                                                                  
+[ req ]                                                                          
+prompt              = no                                                                          
+encrypt_key         = no                                                                        
+default_bits        = 4096                                                      
+distinguished_name  = req_distinguished_name
+string_mask         = utf8only
+default_md          = sha256
+x509_extensions     = v3_ca
+
+[ v3_ca ]                                                             
+authorityKeyIdentifier = keyid,issuer                                             
+basicConstraints       = critical, CA:true, pathlen:0                                  
+keyUsage               = critical, digitalSignature, keyCertSign
+subjectKeyIdentifier   = hash
+                                                      
+[ server_cert ]                                                                                   
+authorityKeyIdentifier = keyid,issuer:always
+basicConstraints       = CA:FALSE                                                               
+extendedKeyUsage       = serverAuth                              
+keyUsage               = critical, digitalSignature, keyEncipherment
+subjectAltName         = @alternate_names
+subjectKeyIdentifier   = hash                                                                    
+                                                                                                  
+    [ req_distinguished_name ]
+    C  = FR
+    ST = France
+    L  = Paris                                                                               
+    O  = Laravel Docky                                                           
+    OU = Docky
+    CN = laravel.test
+    emailAddress = "ali.dalhouss@gmail.com"
+                                                                                                  
+    [ alternate_names ]                                                                          
+    DNS.1 = laravel.test                                                                      
+    DNS.2 = *.laravel.test
