@@ -3,4 +3,5 @@ database-data/
 *.env
 *.log
 .idea
+nginx/ssl
 
