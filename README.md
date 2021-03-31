@@ -93,7 +93,7 @@ It is built with the ability to choose to enable PHP extensions among **34 avail
 ARG PHP_INSTALL_EXT_PDO_PGSQL="1"
 ```
 
-A list of php extension configuration files is provided with this project. These files are stored in ``php/phpini`` folder. You can add you custom php extension configuration that will be copied into the right php ini folder of the container.
+A list of php extension configuration files is provided with this project. These files are stored in ``php/phpini`` folder. You can add your custom php extension configuration that will be copied into the right php ini folder of the container.
 
 
 ## Artisan
@@ -105,7 +105,7 @@ $ docker-compose run --rm artisan <artisan command>
 
 
 ## Composer
-Composer service is also based on Alpine linux and use the official Composer image on Docker hub.
+Composer service is also based on Alpine linux and use the official Composer image from Docker hub.
 
 This command allows to execute a composer command:
 
@@ -116,8 +116,8 @@ $ docker-compose run --rm composer <composer command>
 
 ## PostgreSQL
 
-Data are persisted in the host machine so they will no get lost as soon as the container is stopped.
-To set Postgresql parameters via the configuration file is to edit the ``posgtresql.conf``.
+Data are persisted in the host machine so they will not get lost as soon as the container is stopped.
+To set PostgreSQL parameters via the configuration file is to edit the ``posgtresql.conf``.
 
 
 ## npm
