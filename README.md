@@ -14,7 +14,7 @@ To improve security of this environment, Docker images are build following these
 - Install only the minimum required packages for the service.
 - Clean and remove cache hits during the build process.
 
-For consistency, all Docker images are based on **Alpine Linux** and use only official images on Docker hub.
+For consistency, all Docker images are based on **Alpine Linux** and use only official images from Docker hub.
 
 ## Project Structure
 ```
@@ -59,21 +59,21 @@ The following services are started with their ports exposed:
     - ``1025``
     - ``8025``
 
-Additionnaly, three containers are provided, each one handles a specific responsibility:
+Additionnaly, three containers are provided with this project, each one handles a specific responsibility:
 
-- Composer:
+### Composer:
 
 ```
 $ docker-compose run --rm composer <composer command>
 ```
 
-- PHP Artisan:
+### PHP Artisan:
 
 ```
 $ docker-compose run --rm artisan <artisan command>
 ```
 
-- npm:
+### npm:
 
 ```
 $ docker-compose run --rm npm <npm command>
