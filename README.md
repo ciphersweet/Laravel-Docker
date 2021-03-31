@@ -3,7 +3,7 @@
 Laravel Docky is an open source project for building lightweight, secure and fast local Laravel development environments using Docker.
 
 ## Security
-To improve security of this environment, Docker images are build following these best practices:
+To improve security of this environment, Docker images on this project are built following these best practices:
 
 - Each container should have only one responsibility.
 - Harden the security of the service running within the container.
@@ -47,7 +47,7 @@ Once you are inside the directory where you cloned this repository, run this com
 $ docker-compose up -d --build
 ```
 
-The following services are started with their ports exposed:
+The following services are started with their respective ports exposed:
 
 - nginx:
     - ``80``
@@ -55,7 +55,7 @@ The following services are started with their ports exposed:
 - php-fpm: ``9000``
 - postgresql: ``5432``
 - redis: ``6379``
-- nginx:
+- mailhog:
     - ``1025``
     - ``8025``
 
