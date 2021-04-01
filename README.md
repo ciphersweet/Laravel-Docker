@@ -18,24 +18,24 @@ For consistency, all Docker images are based on **Alpine Linux** and use only of
 
 ## Project Structure
 ```
-Vue Docky
-    │   
-    └─── src   
-    └─── nginx 
-    │     │   certs     
-    │     │   logs    
-    │     │   nginxconf
-    │     │   ssl
-    │     └───Dockerfile
-    └─── php 
-    │     │   phpini     
-    │     │   www.conf  
-    │     └───Dockerfile
-    └─── postgresql 
-    │     │   postgres.conf  
-    │     └───Dockerfile
-    └─── docker-compose.yml
-    └─── README.md
+Laravel Docky
+      │   
+      └─── src   
+      └─── nginx 
+      │     │   certs     
+      │     │   logs    
+      │     │   nginxconf
+      │     │   ssl
+      │     └───Dockerfile
+      └─── php 
+      │     │   phpini     
+      │     │   www.conf  
+      │     └───Dockerfile
+      └─── postgresql 
+      │     │   postgres.conf  
+      │     └───Dockerfile
+      └─── docker-compose.yml
+      └─── README.md
 ```
 
 ## Usage
