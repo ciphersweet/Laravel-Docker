@@ -96,14 +96,14 @@ ARG PHP_INSTALL_EXT_PDO_PGSQL="1"
 ### List of available PHP modules:
 
 
-| <!-- --> | <!-- -->  | <!-- -->  |   <!-- -->   | <!-- --> |
-| :------: | :-------: | :-------: | :----------: | :------: |
-|  BCMATH  |    BZ2    | CALENDAR  |     DBA      |   DOM    |
-| ENCHANT  |   EXIF    |    FFI    |      GD      | GETTEXT  |
-|   GMP    |   IMAP    |   INTL    |     LDAP     |  MYSQLI  |
-|  PCNTL   | PDO_MYSQL | PDO_PGSQL |    PGSQL     |  SHMOP   |
-|   SNMP   |   SOAP    |  SOCKETS  |   SYSVMSG    | SYSVSEM  |
-| SYSVSHM  |   TIDY    |    XSL    | ZEND_OPCACHE |   ZIP    |
+|         |           | PHP extension list |              |         |
+| :-----: | :-------: | :----------------: | :----------: | :-----: |
+| BCMATH  |    BZ2    |      CALENDAR      |     DBA      |   DOM   |
+| ENCHANT |   EXIF    |        FFI         |      GD      | GETTEXT |
+|   GMP   |   IMAP    |        INTL        |     LDAP     | MYSQLI  |
+|  PCNTL  | PDO_MYSQL |     PDO_PGSQL      |    PGSQL     |  SHMOP  |
+|  SNMP   |   SOAP    |      SOCKETS       |   SYSVMSG    | SYSVSEM |
+| SYSVSHM |   TIDY    |        XSL         | ZEND_OPCACHE |   ZIP   |
 
 A list of php extension configuration files is provided with this project. These files are stored in ``php/phpini`` folder. You can add your custom php extension configuration that will be copied into the right php ini folder of the container.
 
