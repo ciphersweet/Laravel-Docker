@@ -94,7 +94,8 @@ ARG PHP_INSTALL_EXT_PDO_PGSQL="1"
 ```
 
 ### List of available PHP modules:
-|         |           |           |              |         |
+
+| &nbsp;  |  &nbsp;   |  &nbsp;   |    &nbsp;    | &nbsp;  |
 | :-----: | :-------: | :-------: | :----------: | :-----: |
 | BCMATH  |    BZ2    | CALENDAR  |     DBA      |   DOM   |
 | ENCHANT |   EXIF    |    FFI    |      GD      | GETTEXT |
