@@ -93,6 +93,7 @@ It is built with the ability to choose to enable PHP extensions among **34 avail
 ARG PHP_INSTALL_EXT_PDO_PGSQL="1"
 ```
 
+<<<<<<< HEAD
 ### List of available PHP modules:
 
 
@@ -105,6 +106,8 @@ ARG PHP_INSTALL_EXT_PDO_PGSQL="1"
 |  SNMP   |   SOAP    |      SOCKETS       |   SYSVMSG    | SYSVSEM |
 | SYSVSHM |   TIDY    |        XSL         | ZEND_OPCACHE |   ZIP   |
 
+=======
+>>>>>>> parent of 11f372b (Update README.md)
 A list of php extension configuration files is provided with this project. These files are stored in ``php/phpini`` folder. You can add your custom php extension configuration that will be copied into the right php ini folder of the container.
 
 
