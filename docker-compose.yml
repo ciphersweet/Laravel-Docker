@@ -16,7 +16,6 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./nginx/logs:/var/log/nginx/
-      - ./nginx/ssl:/etc/nginx/ssl/
     networks:
       - laravel_app
   

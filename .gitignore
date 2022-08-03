@@ -2,5 +2,6 @@ database-data/
 *.env
 *.log
 .idea
+src
 nginx/ssl
 

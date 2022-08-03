@@ -303,6 +303,9 @@ ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
 RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
 RUN chown laravel:laravel /var/www/html
 
+COPY ./composer/composer-installer.sh /opt/composer-installer.sh
+RUN /bin/sh /opt/composer-installer.sh
+
 USER laravel
 
 COPY php_loaded_extensions.php /var/www/html/php_loaded_extensions.php
