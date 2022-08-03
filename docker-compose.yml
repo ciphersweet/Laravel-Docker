@@ -37,19 +37,6 @@ services:
     networks:
       - laravel_app
 
-  # Composer from app service image
-  composer:
-    build:
-      context: ./composer
-      dockerfile: Dockerfile
-    image: yuba/composer:v0.1
-    container_name: composer-app
-    depends_on:
-      - app
-    entrypoint: ['composer']
-    volumes:
-      - ./src:/var/www/html
-
   # Database Service
   database:
     build: 
@@ -69,22 +56,6 @@ services:
       - ./postgresql/postgres.conf:/usr/local/etc/postgres/postgres.conf
       - database-data:/var/lib/postgresql/data:delegated
     networks: 
-      - laravel_app
-
-  # Artisan CLI Service
-  artisan:
-    build:
-      context: ./php
-      dockerfile: Dockerfile
-    image: yuba/artisan:v0.1
-    container_name: artisan
-    volumes:
-      - ./src:/var/www/html
-    depends_on:
-      - database
-    working_dir: /var/www/html
-    entrypoint: ['php', '/var/www/html/artisan']
-    networks:
       - laravel_app
 
   # Node Package Manager Service
