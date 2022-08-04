@@ -24,11 +24,12 @@ Laravel Docky
       └─── nginx 
       │     │   certs     
       │     │   logs    
-      │     │   nginxconf
+      │     │   conf
       │     │   ssl
       │     └───Dockerfile
       └─── php 
       │     │   phpini     
+      │     │   conposer  
       │     │   www.conf  
       │     └───Dockerfile
       └─── postgresql 
@@ -80,7 +81,7 @@ $ docker-compose run --rm npm <npm command>
 ```
 
 ## Web Server - Nginx
-Nginx service is running on the port ``80`` and configured with TLS v1.2 and TLS v1.3 enabled. Also, Nginx service is started with a non-root user.
+Nginx service is running on the port ``443`` and configured with TLS v1.2 and TLS v1.3 enabled. Also, Nginx service is started with a non-root user.
 
 **Note**: Mode Security nginx module is under configuration at the time of writing this documentation.
 
@@ -110,20 +111,19 @@ A list of php extension configuration files is provided with this project. These
 
 
 ## Artisan
-Artisan CLI service is created from the PHP-FPM container. It allows to interact with your Laravel project by running this command:
+Artisan CLI service allows to interact with your Laravel project by running this command:
 
 ```
-$ docker-compose run --rm artisan <artisan command>
+$ docker-compose -it php-app php artisan <artisan command>
 ```
 
 
 ## Composer
-Composer service is also based on Alpine linux and use the official Composer image from Docker hub.
-
+Composer service is part of the PHP contrainer
 This command allows to execute a composer command:
 
 ```
-$ docker-compose run --rm composer <composer command>
+$ docker-compose -it php-app composer <composer command>
 ```
 
 
