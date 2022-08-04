@@ -60,7 +60,7 @@ services:
 
   # Node Package Manager Service
   npm:
-    image: node:15-alpine3.10
+    image: node:16.16-alpine3.15
     container_name: npm
     user: "1000:1000"
     volumes:
@@ -99,5 +99,3 @@ networks:
 volumes: 
   database-data:
     driver: local
-    
-
