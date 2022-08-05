@@ -65,13 +65,13 @@ Additionnaly, three containers are provided with this project, each one handles 
 ### Composer:
 
 ```
-$ docker-compose -it php-app composer <composer command>
+$ docker exec -it php-app composer <composer command>
 ```
 
 ### PHP Artisan:
 
 ```
-$ docker-compose -it php-app php artisan <artisan command>
+$ docker exec -it php-app php artisan <artisan command>
 ```
 
 ### npm:
@@ -114,7 +114,7 @@ A list of php extension configuration files is provided with this project. These
 Artisan CLI service allows to interact with your Laravel project by running this command:
 
 ```
-$ docker-compose -it php-app php artisan <artisan command>
+$ ddocker exec -it php-app php artisan <artisan command>
 ```
 
 
@@ -123,7 +123,7 @@ Composer service is part of the PHP contrainer
 This command allows to execute a composer command:
 
 ```
-$ docker-compose -it php-app composer <composer command>
+$ docker exec -it php-app composer <composer command>
 ```
 
 
