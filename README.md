@@ -65,13 +65,13 @@ Additionnaly, three containers are provided with this project, each one handles 
 ### Composer:
 
 ```
-$ docker-compose run --rm composer <composer command>
+$ docker-compose -it php-app composer <composer command>
 ```
 
 ### PHP Artisan:
 
 ```
-$ docker-compose run --rm artisan <artisan command>
+$ docker-compose -it php-app php artisan <artisan command>
 ```
 
 ### npm:
