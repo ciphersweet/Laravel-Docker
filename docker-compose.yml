@@ -32,8 +32,6 @@ services:
     tty: true
     volumes:
       - ./src:/var/www/html
-    environment:
-      APP_ENV: dev
     networks:
       - laravel_app
 
