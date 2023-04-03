@@ -1,6 +1,5 @@
 version: "3.9"
 services:
-
   # Nginx Service
   webserver:
     build:
@@ -18,10 +17,10 @@ services:
       - ./nginx/logs:/var/log/nginx/
     networks:
       - laravel_app
-  
+
   # PHP Service
   app:
-    build: 
+    build:
       context: ./php/
       dockerfile: Dockerfile
     image: yuba/php-app:v0.1
@@ -37,34 +36,36 @@ services:
 
   # Database Service
   database:
-    build: 
+    build:
       context: ./postgresql
       dockerfile: Dockerfile
     image: yuba/postgresql:v0.1
     container_name: postgresql-db
     restart: unless-stopped
     tty: true
-    ports: 
+    ports:
       - "5432:5432"
-    environment: 
+    environment:
       POSTGRES_PASSWORD: postgresql_password
       POSTGRES_USER: postgres
       POSTGRES_DB: laravel
-    volumes: 
+    volumes:
       - ./postgresql/postgres.conf:/usr/local/etc/postgres/postgres.conf
       - database-data:/var/lib/postgresql/data:delegated
-    networks: 
+    networks:
       - laravel_app
 
   # Node Package Manager Service
   npm:
-    image: node:16.16-alpine3.15
+    image: node:19.8.1-alpine3.17
     container_name: npm
     user: "1000:1000"
+    ports:
+      - "5173:5173"
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
-    entrypoint: ['npm']
+    entrypoint: ["npm"]
     networks:
       - laravel_app
 
@@ -82,18 +83,18 @@ services:
   mailhog:
     image: mailhog/mailhog:latest
     container_name: mailhog
-    ports: 
+    ports:
       - "1025:1025"
       - "8025:8025"
-    networks: 
+    networks:
       - laravel_app
-  
+
 # Define the network
 networks:
   laravel_app:
     driver: bridge
 
 # Define the volumes
-volumes: 
+volumes:
   database-data:
     driver: local
