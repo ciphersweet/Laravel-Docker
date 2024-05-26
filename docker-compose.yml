@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   # Nginx Service
   webserver:
@@ -46,7 +45,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: postgresql_password
+      POSTGRES_PASSWORD: postgres_password
       POSTGRES_USER: postgres
       POSTGRES_DB: laravel
     volumes:
@@ -57,7 +56,7 @@ services:
 
   # Node Package Manager Service
   npm:
-    image: node:19.8.1-alpine3.17
+    image: node:22-alpine
     container_name: npm
     user: "1000:1000"
     ports:
