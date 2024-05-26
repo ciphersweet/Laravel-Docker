@@ -181,9 +181,21 @@ export default defineConfig({
 
 Second, don't forget to add `@vite(['resources/css/app.css', 'resources/js/app.js'])` inside your blade `head` tag.
 
-## MailHog
+## Mailpit
 
-MailHog is used by default by Laravel 8 for testing email sending over smtp in the local development. The service is started on the port 8025 by docker-compoe. The dashboard is accessible from `localhost:8025`.
+Mailpit is included for testing email sending over smtp in the local development. The service is started on the port 8025 by docker-compoe. The dashboard is accessible from `localhost:8025`.
+Here is the configuration of Laravel .env file for Mailpit:
+
+```
+AIL_MAILER=smtp
+MAIL_HOST=mailpit
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+```
 
 ## Redis
 
