@@ -79,12 +79,19 @@ services:
       - laravel_app
 
   # Mailhog Service
-  mailhog:
-    image: mailhog/mailhog:latest
-    container_name: mailhog
+  mailpit:
+    image: axllent/mailpit:edge
+    container_name: mailpit
+    volumes:
+      - ./mailpit:/data
     ports:
       - "1025:1025"
       - "8025:8025"
+    environment:
+      MP_MAX_MESSAGES: 5000
+      MP_DATABASE: /data/mailpit.db
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
     networks:
       - laravel_app
 
