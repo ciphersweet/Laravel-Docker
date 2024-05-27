@@ -1,4 +1,4 @@
-FROM nginx:stable-alpine
+FROM nginx:1.26.0-alpine3.19
 
 LABEL maintainer="Ali Dalhouss <ali.dalhouss@gmail.com>"
 
