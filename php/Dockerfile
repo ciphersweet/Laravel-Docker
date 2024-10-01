@@ -1,4 +1,4 @@
-FROM php:8.3-fpm-alpine3.20
+FROM php:8.4.0beta5-fpm-alpine3.20
 
 LABEL maintainer="Ali Dalhouss <ali.dalhouss@gmail.com>"
 
