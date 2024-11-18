@@ -1,6 +1,23 @@
-# Laravel Docky
+# Why Laravel Docker Boilerplate?
 
-Laravel Docky is an open source project for building lightweight, secure and fast local Laravel development environments using Docker.
+- 🚀 Quick Start: Get your Laravel application up and running in minutes with minimal setup.
+- 🛠️ Full-Stack Support: Includes configurations for PHP, Nginx, MySQL/PostgreSQL, Redis, and more.
+- 🔒 Secure & Scalable: Implements Docker best practices for security and performance.
+- 🔧 Customizable: Easily adaptable to fit any Laravel project, from small apps to enterprise-scale solutions.
+
+# Key Features
+
+- Multi-Environment Support: Smoothly transition between development, staging, and production environments.
+- Pre-Configured Services:
+  - PHP (optimized for Laravel).
+  - Nginx web server.
+  - Database options: MySQL, PostgreSQL.
+  - Redis for caching and queues.
+- Docker Compose Integration: Simplify container orchestration with a well-structured docker-compose.yml.
+- Developer-Friendly Tools:
+  - Xdebug for debugging.
+  - Artisan CLI and Composer directly from the container.
+- Optimized for CI/CD: Ready for seamless integration with GitHub Actions, GitLab CI/CD, or other pipelines.
 
 ## Security
 
@@ -20,7 +37,7 @@ For consistency, all Docker images are based on **Alpine Linux** and use only of
 ## Project Structure
 
 ```
-Laravel Docky
+Laravel Docker Boilerplate
       │
       └─── src
       └─── nginx
@@ -43,7 +60,7 @@ Laravel Docky
 
 ## Usage
 
-To start using Laravel Docky, first make sur you have a current version of [Docker](https://docs.docker.com/get-docker/) installed on you host operating system.
+To start using Laravel Docker Boilerplate, first make sur you have a current version of [Docker](https://docs.docker.com/get-docker/) installed on you host operating system.
 
 Once you are inside the directory where you cloned this repository, run this command to build all Docker images and start the services:
 
