@@ -1,3 +1,5 @@
+![GitHub Actions](https://github.com/ciphersweet/laravel-docker-boilerplate/actions/workflows/main.yml/badge.svg?branch=main)
+
 # Why Laravel Docker Boilerplate?
 
 - 🚀 Quick Start: Get your Laravel application up and running in minutes with minimal setup.
